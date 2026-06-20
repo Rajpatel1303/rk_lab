@@ -62,7 +62,7 @@ export default function TechStack() {
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
                 />
               )}
-              {cat}
+              <span className="relative z-10">{cat}</span>
             </button>
           );
         })}

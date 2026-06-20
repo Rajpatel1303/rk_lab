@@ -114,7 +114,7 @@ export const DEVELOPERS: Developer[] = [
       { platform: "GitHub", url: "https://github.com" },
       { platform: "LinkedIn", url: "https://linkedin.com" },
       { platform: "Twitter", url: "https://twitter.com" },
-      { platform: "Email", url: "mailto:abc@gmail.com" }
+      { platform: "Email", url: "mailto:workeemail1303@gmail.com" }
     ],
     signatureQuote: "We craft stable and clean architectural foundations. Modern enterprise backends deserve total resilience, strict type bounds, and zero execution leaks.",
     focus: "Backend Engines & Scalable Core Deployments"
@@ -130,7 +130,7 @@ export const DEVELOPERS: Developer[] = [
       { platform: "GitHub", url: "https://github.com" },
       { platform: "LinkedIn", url: "https://linkedin.com" },
       { platform: "Twitter", url: "https://twitter.com" },
-      { platform: "Email", url: "mailto:abc@gmail.com" }
+      { platform: "Email", url: "mailto:workeemail1303@gmail.com" }
     ],
     signatureQuote: "Interfaces should behave like physical elements reacting dynamically to user gestures—fluid, meaningful, and striking to interact with.",
   }
@@ -148,16 +148,6 @@ export const SERVICES: ServiceItem[] = [
     metrics: "Average Google Lighthouse score: 98+"
   },
   {
-    id: "software-dev",
-    title: "Software Development",
-    description: "Robust industrial systems driving internal team operations, real-time telemetry pipelines, and customized interactive physical automation portals.",
-    iconName: "Cpu",
-    size: "medium",
-    bgGradient: "from-purple-500/10 via-pink-600/5 to-transparent",
-    features: ["Sub-Millisecond WebSockets Updates", "Tactile Native-Fidelity User Interfaces", "Multi-Threaded Node Task Queues"],
-    metrics: "99.99% Operational precision"
-  },
-  {
     id: "saas-apps",
     title: "SaaS Applications",
     description: "Fully featured multi-tenant web systems, complete with complex organization managers, flexible billing systems, interactive charts, and live notifications.",
@@ -168,14 +158,14 @@ export const SERVICES: ServiceItem[] = [
     metrics: "Over $42M in transacted client asset value"
   },
   {
-    id: "ai-solutions",
-    title: "AI Solutions",
-    description: "Direct server-side integration with Large Language Models and AI tool chains to analyze unstructured data sets and generate high-fidelity files.",
-    iconName: "BrainCircuit",
-    size: "wide",
-    bgGradient: "from-emerald-500/10 via-teal-600/5 to-transparent",
-    features: ["Gemini API 2.5 SDK server pipelines", "Vector embedding similarity semantic searches", "Custom real-time markdown analyzers", "Advanced LLM guardrails prompting architecture"],
-    metrics: "85% decrease in routine analytical labor"
+    id: "software-dev",
+    title: "Software Development",
+    description: "Robust industrial systems driving internal team operations, real-time telemetry pipelines, and customized interactive physical automation portals.",
+    iconName: "Cpu",
+    size: "medium",
+    bgGradient: "from-purple-500/10 via-pink-600/5 to-transparent",
+    features: ["Sub-Millisecond WebSockets Updates", "Tactile Native-Fidelity User Interfaces", "Multi-Threaded Node Task Queues"],
+    metrics: "99.99% Operational precision"
   },
   {
     id: "enterprise-software",
@@ -196,6 +186,16 @@ export const SERVICES: ServiceItem[] = [
     bgGradient: "from-pink-500/10 via-brand-purple/5 to-transparent",
     features: ["Figma components auto-mirroring", "Tailwind Theme custom-token extraction", "Slippery fast tactile micro-interactions"],
     metrics: "Over 45 completed premium layouts"
+  },
+  {
+    id: "ai-solutions",
+    title: "AI Solutions",
+    description: "Direct server-side integration with Large Language Models and AI tool chains to analyze unstructured data sets and generate high-fidelity files.",
+    iconName: "BrainCircuit",
+    size: "wide",
+    bgGradient: "from-emerald-500/10 via-teal-600/5 to-transparent",
+    features: ["Gemini API 2.5 SDK server pipelines", "Vector embedding similarity semantic searches", "Custom real-time markdown analyzers", "Advanced LLM guardrails prompting architecture"],
+    metrics: "85% decrease in routine analytical labor"
   }
 ];
 

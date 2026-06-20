@@ -23,6 +23,7 @@ export default function ProjectShowcase() {
           blob: "from-orange-500/10 via-amber-500/5 to-transparent",
           accent: "#ff5d00",
           textBg: "bg-orange-50",
+          graphGradient: "from-orange-500 to-orange-300",
         };
       case "purple":
         return {
@@ -32,6 +33,7 @@ export default function ProjectShowcase() {
           blob: "from-red-500/10 via-orange-500/5 to-transparent",
           accent: "#ef4444",
           textBg: "bg-red-50",
+          graphGradient: "from-red-500 to-pink-400",
         };
       case "emerald":
         return {
@@ -41,6 +43,7 @@ export default function ProjectShowcase() {
           blob: "from-teal-500/10 via-emerald-500/5 to-transparent",
           accent: "#0d9488",
           textBg: "bg-teal-50",
+          graphGradient: "from-teal-500 to-emerald-300",
         };
       case "blue":
       default:
@@ -51,6 +54,7 @@ export default function ProjectShowcase() {
           blob: "from-orange-500/10 via-orange-400/5 to-transparent",
           accent: "#ff7c00",
           textBg: "bg-orange-50/50",
+          graphGradient: "from-orange-500 to-orange-300",
         };
     }
   };
@@ -267,20 +271,20 @@ export default function ProjectShowcase() {
                       
                       <div className="h-16 flex items-end gap-1.5 justify-center">
                         {[40, 55, 30, 80, 95, 60, 45, 90, 85, 100, 70, 85, 95].map((height, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ height: 0 }}
-                            animate={{ height: `${height}%` }}
-                            transition={{
-                              duration: 0.8,
-                              delay: i * 0.05,
-                              repeat: Infinity,
-                              repeatType: "reverse",
-                              repeatDelay: 0.2
-                            }}
-                            className="bg-gradient-to-t from-orange-500 to-orange-300 flex-1 rounded-t-sm"
-                            style={{ minWidth: "3px" }}
-                          />
+                           <motion.div
+                             key={i}
+                             initial={{ height: 0 }}
+                             animate={{ height: `${height}%` }}
+                             transition={{
+                               duration: 0.8,
+                               delay: i * 0.05,
+                               repeat: Infinity,
+                               repeatType: "reverse",
+                               repeatDelay: 0.2
+                             }}
+                             className={`bg-gradient-to-t ${style.graphGradient} flex-1 rounded-t-sm`}
+                             style={{ minWidth: "3px" }}
+                           />
                         ))}
                       </div>
 
@@ -318,18 +322,18 @@ export default function ProjectShowcase() {
                 {/* Right side with Stats & Tag bubbles */}
                 <div className="flex flex-col justify-between space-y-6">
                   {/* Stats Container */}
-                  <div className="space-y-4">
+                  <div className="space-y-4 shrink-0">
                     <h4 className="text-sm font-mono text-slate-500 uppercase tracking-wider">
                       Engineering Benchmarks
                     </h4>
                     
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-3 gap-2 md:gap-3">
                       {activeProj.stats.map((stat, sIdx) => (
                         <div
                           key={sIdx}
-                          className="clay-card rounded-2xl p-4 text-center border-slate-200 shadow-inner"
+                          className="clay-card rounded-2xl py-3 px-2 text-center border-slate-200 shadow-inner flex flex-col justify-center min-h-[92px] md:min-h-[100px]"
                         >
-                          <div className={`text-lg md:text-2xl font-display font-bold ${style.text}`}>
+                          <div className={`text-lg md:text-xl lg:text-lg xl:text-2xl font-display font-bold ${style.text}`}>
                             {stat.value}
                           </div>
                           <div className="text-[10px] text-slate-500 font-mono mt-1 uppercase leading-snug">
@@ -341,7 +345,7 @@ export default function ProjectShowcase() {
                   </div>
 
                   {/* Team Roles */}
-                  <div className="rounded-2xl bg-slate-50 border border-slate-200/80 p-4">
+                  <div className="rounded-2xl bg-slate-50 border border-slate-200/80 p-4 shrink-0">
                     <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
                       Role & Contribution
                     </span>
@@ -351,7 +355,7 @@ export default function ProjectShowcase() {
                   </div>
 
                   {/* Tech stack tags */}
-                  <div>
+                  <div className="shrink-0">
                     <h4 className="text-[11px] font-mono text-slate-500 uppercase tracking-wider mb-2.5">
                       Operational Stack Used
                     </h4>

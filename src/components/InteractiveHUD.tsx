@@ -24,6 +24,21 @@ export default function InteractiveHUD() {
   // ENGINE MODE CONTROLLER: "2d" (Fluid Physics) vs "3d" (ThreeJS WebGL)
   const [engineMode, setEngineMode] = useState<"2d" | "3d">("2d");
 
+  // Performance Guard: Track component visibility in viewport
+  const isVisibleRef = useRef(true);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !containerRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   // State shared/diagnostic logs
   const [realtimeFPS, setRealtimeFPS] = useState<number>(60);
   const [latencyValue, setLatencyValue] = useState<number>(0.12);
@@ -151,6 +166,10 @@ export default function InteractiveHUD() {
     const pullStrength = 0.08;
 
     const tick = (now: number) => {
+      if (!isVisibleRef.current) {
+        animationId = requestAnimationFrame(tick);
+        return;
+      }
       const width = canvas.width;
       const height = canvas.height;
 
@@ -662,6 +681,10 @@ export default function InteractiveHUD() {
     let prevTickTime = performance.now();
 
     const tick3D = (now: number) => {
+      if (!isVisibleRef.current) {
+        lastAnimFrameId = requestAnimationFrame(tick3D);
+        return;
+      }
       const deltaFrame = now - prevTickTime;
       prevTickTime = now;
       frameTimes.push(deltaFrame);

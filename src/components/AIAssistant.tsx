@@ -264,10 +264,10 @@ export default function AIAssistant() {
               Direct Contact Pipeline:
             </span>
             <a
-              href="mailto:rajgogari1303@gmail.com"
+              href="mailto:workeemail1303@gmail.com"
               className="text-xs font-mono font-medium text-orange-600 hover:underline"
             >
-              rajgogari1303@gmail.com
+              workeemail1303@gmail.com
             </a>
           </div>
         </div>
@@ -293,6 +293,26 @@ export default function AIAssistant() {
                 </p>
                 <p className="text-orange-600 font-mono text-xs animate-pulse">
                   {loadingPhrases[loadingStep]}
+                </p>
+              </motion.div>
+            ) : submittedMessage ? (
+              /* FLASH SENT RESPONSE SCENE */
+              <motion.div
+                key="submitted-banner"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                className="text-center py-12"
+              >
+                <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-500/25 text-emerald-700 flex items-center justify-center mx-auto mb-6 shadow-inner">
+                  <SharedIcon name="Check" size={24} className="animate-bounce" />
+                </div>
+
+                <p className="text-slate-900 font-mono text-lg tracking-wider mb-1 uppercase font-semibold">
+                  Proposal Submitted Successfully
+                </p>
+                <p className="text-slate-550 font-mono text-xs max-w-sm mx-auto leading-relaxed">
+                  Your strategy scope and calculations have been sent directly to workeemail1303@gmail.com in the background. (Note: If this is your first submission, please check your inbox to confirm/activate the FormSubmit channel!)
                 </p>
               </motion.div>
             ) : result ? (
@@ -409,34 +429,70 @@ export default function AIAssistant() {
                   </button>
                   <button
                     onClick={() => {
+                      if (result) {
+                        const subject = `Strategy Proposal for ${clientName}`;
+                        const body = `Patel Software Agency - Strategy Proposal Scope Submission
+----------------------------------
+Client/Organization: ${clientName}
+Budget Tier: ${budgets[budgetIdx].label}
+Target Timeline: ${timelines[timelineIdx].label}
+
+Scope of Work:
+${scope}
+
+----------------------------------
+Calculated Strategy & Estimates
+----------------------------------
+Concept Summary: ${result.conceptSummary}
+Estimated Hours: ${result.estimatedHours} hours
+Timeline Cycles: ${result.timelineCycles} cycles
+
+Recommended Tech Stack:
+- ${result.recommendedStack.join("\n- ")}
+
+Systems & Infrastructure Review:
+"${result.sysArchitectReview}"
+
+Creative & Interface Review:
+"${result.interfaceReview}"
+
+Crucial Sprints Milestones:
+- ${result.keyPhases.join("\n- ")}`;
+
+                        fetch("https://formsubmit.co/ajax/workeemail1303@gmail.com", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json"
+                          },
+                          body: JSON.stringify({
+                            _subject: `Strategy Proposal: ${clientName}`,
+                            _captcha: "false",
+                            "Client/Organization": clientName,
+                            "Budget Tier": budgets[budgetIdx].label,
+                            "Target Timeline": timelines[timelineIdx].label,
+                            "Project Scope": scope,
+                            "Concept Summary": result.conceptSummary,
+                            "Estimated Hours": `${result.estimatedHours} Hours`,
+                            "Timeline Cycles": `${result.timelineCycles} Cycles`,
+                            "Recommended Tech Stack": result.recommendedStack.join(", "),
+                            "Systems Architect Review (Raj)": result.sysArchitectReview,
+                            "Creative Interface Review (Kashyap)": result.interfaceReview,
+                            "Sprint Milestones": result.keyPhases.join(" -> ")
+                          })
+                        })
+                        .then(response => response.json())
+                        .then(data => console.log("FormSubmit success:", data))
+                        .catch(err => console.error("FormSubmit error:", err));
+                      }
                       setSubmittedMessage(true);
-                      setTimeout(() => setSubmittedMessage(false), 3000);
+                      setTimeout(() => setSubmittedMessage(false), 5000);
                     }}
                     className="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-xs text-white uppercase font-mono font-semibold transition-all"
                   >
-                    Submit Scope To Dev Team // SMS
+                    Submit Scope To Dev Team // EMAIL
                   </button>
                 </div>
-              </motion.div>
-            ) : submittedMessage ? (
-              /* FLASH SENT RESPONSE SCENE */
-              <motion.div
-                key="submitted-banner"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                className="text-center py-12"
-              >
-                <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-500/25 text-emerald-700 flex items-center justify-center mx-auto mb-6 shadow-inner">
-                  <SharedIcon name="Check" size={24} className="animate-bounce" />
-                </div>
-
-                <p className="text-slate-900 font-mono text-lg tracking-wider mb-1 uppercase font-semibold">
-                  Proposal Logged Successfully
-                </p>
-                <p className="text-slate-550 font-mono text-xs max-w-sm mx-auto leading-relaxed">
-                  The computed targets have been forwarded to our engineering units. A direct calendar invitation or secure technical proposal response will arrive shortly.
-                </p>
               </motion.div>
             ) : (
               /* EMPTY / INSTRUCTION STATE DISPLAY CARD */

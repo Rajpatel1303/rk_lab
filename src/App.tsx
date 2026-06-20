@@ -127,7 +127,8 @@ export default function App() {
     setShowMobileMenu(false);
     const element = document.getElementById(id);
     if (element) {
-      const offset = 90;
+      const navEl = document.getElementById("main-navigation-bar");
+      const offset = navEl ? navEl.getBoundingClientRect().height + 20 : 90;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -156,13 +157,13 @@ export default function App() {
 
       {/* 2. Floating Glass Navigation Bar */}
       <nav
-        className={`fixed top-5 inset-x-0 z-50 max-w-5xl mx-auto px-4 md:px-6 transition-all duration-300`}
+        className={`fixed top-5 inset-x-0 z-50 max-w-6xl mx-auto px-4 md:px-6 transition-all duration-300`}
         id="main-navigation-bar"
       >
         <div
-          className={`flex items-center justify-between py-4 px-6 rounded-full border transition-all duration-500 ${
+          className={`flex items-center justify-between py-3 pl-6 pr-9 rounded-full border transition-all duration-500 ${
             scrolled
-              ? "background-glass-scrolled backdrop-blur-2xl border-orange-500/10 bg-white/70 shadow-lg"
+              ? "glass-panel shadow-lg"
               : "border-transparent bg-transparent"
           }`}
           style={{
@@ -193,7 +194,7 @@ export default function App() {
           </button>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-1 bg-slate-100/60 border border-slate-200/80 py-1 px-1.5 rounded-full">
+          <div className="hidden lg:flex items-center gap-2 bg-slate-100/60 border border-slate-200/80 py-1.5 px-2.5 rounded-full mx-6">
             {menuItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -212,18 +213,18 @@ export default function App() {
                   {isActive && (
                     <motion.div
                       layoutId="navActiveHighlighter"
-                      className="absolute inset-0 bg-white border border-slate-200/60 shadow-sm rounded-full"
+                      className="absolute inset-0 bg-white border border-slate-200/60 shadow-sm rounded-full animate-none"
                       transition={{ type: "spring", stiffness: 350, damping: 28 }}
                     />
                   )}
-                  {item.label}
+                  <span className="relative z-10">{item.label}</span>
                 </button>
               );
             })}
           </div>
 
           {/* Connect Action Trigger and Theme Switcher */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-4">
             {/* Theme switcher pill group */}
             <div className="flex bg-slate-100 border border-slate-200 p-0.5 rounded-full items-center select-none shrink-0">
               <button
@@ -286,7 +287,7 @@ export default function App() {
               setShowMobileMenu(!showMobileMenu);
             }}
             onMouseEnter={playHoverTick}
-            className="md:hidden w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
+            className="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
             aria-label="Toggle Menu"
           >
             <SharedIcon name={showMobileMenu ? "X" : "Menu"} size={20} />
@@ -300,7 +301,7 @@ export default function App() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="mt-2 text-center rounded-3xl border border-orange-500/10 bg-white/95 backdrop-blur-2xl p-6 md:hidden space-y-4 shadow-2xl"
+              className="mt-2 text-center rounded-3xl border border-orange-500/10 bg-white/95 backdrop-blur-2xl p-6 lg:hidden space-y-4 shadow-2xl"
               id="mobile-navigation-dropdown"
             >
               <div className="flex flex-col gap-2">
@@ -659,19 +660,19 @@ export default function App() {
 
           {/* Contact details list instead of build/ENVR */}
           <div className="flex items-center gap-4 flex-wrap justify-center text-xs text-slate-605">
-            <a href="tel:1236547891" className="hover:text-orange-600 flex items-center gap-1 font-semibold">
-              <span>📞 1236547891</span>
+            <a href="tel:8128385448" className="hover:text-orange-600 flex items-center gap-1 font-semibold">
+              <span>📞 8128385448</span>
             </a>
             <span>•</span>
-            <a href="tel:9876543219" className="hover:text-orange-600 flex items-center gap-1 font-semibold">
-              <span>📞 9876543219</span>
+            <a href="tel:9510968449" className="hover:text-orange-600 flex items-center gap-1 font-semibold">
+              <span>📞 9510968449</span>
             </a>
             <span>•</span>
             <a
-              href="mailto:abc@gmail.com"
+              href="mailto:workeemail1303@gmail.com"
               className="text-orange-600 hover:text-orange-700 font-semibold flex items-center gap-1"
             >
-              <span>✉️ abc@gmail.com</span>
+              <span>✉️ workeemail1303@gmail.com</span>
             </a>
           </div>
         </div>
