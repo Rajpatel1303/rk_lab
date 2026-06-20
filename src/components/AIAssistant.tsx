@@ -23,6 +23,7 @@ export default function AIAssistant() {
   const [loadingStep, setLoadingStep] = useState(0);
   const [result, setResult] = useState<ProposalOutput | null>(null);
   const [submittedMessage, setSubmittedMessage] = useState(false);
+  const [submitType, setSubmitType] = useState<"lock" | "whatsapp" | null>(null);
 
   const budgets = [
     { label: "SaaS Starter ($10k - $20k)", code: "STARTER" },
@@ -305,14 +306,16 @@ export default function AIAssistant() {
                 className="text-center py-12"
               >
                 <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-500/25 text-emerald-700 flex items-center justify-center mx-auto mb-6 shadow-inner">
-                  <SharedIcon name="Check" size={24} className="animate-bounce" />
+                  <SharedIcon name={submitType === "whatsapp" ? "Send" : "Check"} size={24} className="animate-bounce" />
                 </div>
 
                 <p className="text-slate-900 font-mono text-lg tracking-wider mb-1 uppercase font-semibold">
-                  Proposal Submitted Successfully
+                  {submitType === "whatsapp" ? "Redirecting to WhatsApp..." : "Estimate Locked"}
                 </p>
                 <p className="text-slate-550 font-mono text-xs max-w-sm mx-auto leading-relaxed">
-                  Your strategy scope and calculations have been sent directly to workeemail1303@gmail.com in the background. (Note: If this is your first submission, please check your inbox to confirm/activate the FormSubmit channel!)
+                  {submitType === "whatsapp"
+                    ? "Opening a chat window with our Dev Team at +1 (680) 888-3230. Please send the pre-filled message to share your strategy proposal instantly."
+                    : "Your calculated strategy proposal has been locked to this session's interface view."}
                 </p>
               </motion.div>
             ) : result ? (
@@ -420,77 +423,64 @@ export default function AIAssistant() {
                 <div className="flex gap-3 justify-end border-t border-slate-200 pt-4 mt-2">
                   <button
                     onClick={() => {
+                      setSubmitType("lock");
                       setSubmittedMessage(true);
-                      setTimeout(() => setSubmittedMessage(false), 3000);
+                      setTimeout(() => {
+                        setSubmittedMessage(false);
+                        setSubmitType(null);
+                      }, 3000);
                     }}
-                    className="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-xs text-slate-700 uppercase font-mono font-medium transition-all"
+                    className="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-xs text-slate-700 uppercase font-mono font-medium transition-all cursor-pointer"
                   >
                     Lock Estimate Frame
                   </button>
                   <button
                     onClick={() => {
                       if (result) {
-                        const subject = `Strategy Proposal for ${clientName}`;
-                        const body = `Patel Software Agency - Strategy Proposal Scope Submission
+                        const whatsappNumber = "16808883230";
+                        const whatsappText = `*Patel Software Agency - Strategy Proposal Scope Submission*
 ----------------------------------
-Client/Organization: ${clientName}
-Budget Tier: ${budgets[budgetIdx].label}
-Target Timeline: ${timelines[timelineIdx].label}
+*Client/Organization:* ${clientName}
+*Budget Tier:* ${budgets[budgetIdx].label}
+*Target Timeline:* ${timelines[timelineIdx].label}
 
-Scope of Work:
+*Scope of Work:*
 ${scope}
 
 ----------------------------------
-Calculated Strategy & Estimates
+*Calculated Strategy & Estimates*
 ----------------------------------
-Concept Summary: ${result.conceptSummary}
-Estimated Hours: ${result.estimatedHours} hours
-Timeline Cycles: ${result.timelineCycles} cycles
+*Concept Summary:* ${result.conceptSummary}
+*Estimated Hours:* ${result.estimatedHours} hours
+*Timeline Cycles:* ${result.timelineCycles} cycles
 
-Recommended Tech Stack:
-- ${result.recommendedStack.join("\n- ")}
+*Recommended Tech Stack:*
+${result.recommendedStack.map(tech => `- ${tech}`).join("\n")}
 
-Systems & Infrastructure Review:
+*Systems & Infrastructure Review:*
 "${result.sysArchitectReview}"
 
-Creative & Interface Review:
+*Creative & Interface Review:*
 "${result.interfaceReview}"
 
-Crucial Sprints Milestones:
-- ${result.keyPhases.join("\n- ")}`;
+*Crucial Sprints Milestones:*
+${result.keyPhases.map(phase => `- ${phase}`).join("\n")}`;
 
-                        fetch("https://formsubmit.co/ajax/workeemail1303@gmail.com", {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json",
-                            "Accept": "application/json"
-                          },
-                          body: JSON.stringify({
-                            _subject: `Strategy Proposal: ${clientName}`,
-                            _captcha: "false",
-                            "Client/Organization": clientName,
-                            "Budget Tier": budgets[budgetIdx].label,
-                            "Target Timeline": timelines[timelineIdx].label,
-                            "Project Scope": scope,
-                            "Concept Summary": result.conceptSummary,
-                            "Estimated Hours": `${result.estimatedHours} Hours`,
-                            "Timeline Cycles": `${result.timelineCycles} Cycles`,
-                            "Recommended Tech Stack": result.recommendedStack.join(", "),
-                            "Systems Architect Review (Raj)": result.sysArchitectReview,
-                            "Creative Interface Review (Kashyap)": result.interfaceReview,
-                            "Sprint Milestones": result.keyPhases.join(" -> ")
-                          })
-                        })
-                        .then(response => response.json())
-                        .then(data => console.log("FormSubmit success:", data))
-                        .catch(err => console.error("FormSubmit error:", err));
+                        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
+
+                        // Open WhatsApp chat in a new tab
+                        window.open(whatsappUrl, "_blank");
                       }
+                      setSubmitType("whatsapp");
                       setSubmittedMessage(true);
-                      setTimeout(() => setSubmittedMessage(false), 5000);
+                      setTimeout(() => {
+                        setSubmittedMessage(false);
+                        setSubmitType(null);
+                      }, 5000);
                     }}
-                    className="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-xs text-white uppercase font-mono font-semibold transition-all"
+                    className="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-xs text-white uppercase font-mono font-semibold transition-all cursor-pointer select-none"
                   >
-                    Submit Scope To Dev Team // EMAIL
+                    Submit Scope To Dev Team // WHATSAPP
                   </button>
                 </div>
               </motion.div>
