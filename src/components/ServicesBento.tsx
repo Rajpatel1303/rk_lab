@@ -62,7 +62,7 @@ export default function ServicesBento() {
           transition={{ delay: 0.1 }}
           className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-slate-900 mb-6"
         >
-          Services <span className="bg-gradient-to-r from-orange-500 via-amber-500 to-red-500 bg-clip-text text-transparent">Bento Grid</span>
+          Our <span className="bg-gradient-to-r from-orange-500 via-amber-500 to-red-500 bg-clip-text text-transparent">Services</span>
         </motion.h2>
 
         <motion.p
@@ -70,9 +70,9 @@ export default function ServicesBento() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="max-w-2xl mx-auto text-slate-500 text-base md:text-lg"
+          className="max-w-2xl mx-auto text-slate-550 text-base md:text-lg"
         >
-          Futuristic software architecture engineered for speed, high-fidelity visualization, and modular compliance. Select cards to explore key engineering benchmarks.
+          Technology architecture engineered for speed, high-fidelity visualization, and modular compliance. Select cards to explore key engineering benchmarks.
         </motion.p>
       </div>
 
@@ -90,7 +90,7 @@ export default function ServicesBento() {
           
           const accent = index % 3 === 0 
             ? {
-                text: "text-orange-600",
+                text: "text-orange-605",
                 bg: "bg-orange-500",
                 badge: "text-orange-700 bg-orange-50 border-orange-500/20",
                 gradient: "from-orange-400 to-amber-500",
@@ -115,7 +115,7 @@ export default function ServicesBento() {
                   gradient: "from-amber-400 to-orange-500",
                   grid: "to-amber-500/5",
                   hud: "border-amber-500/10",
-                  hoverText: "group-hover:text-amber-600"
+                  hoverText: "group-hover:text-amber-650"
                 };
           
           return (
@@ -145,10 +145,6 @@ export default function ServicesBento() {
                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center clay-card shadow-spatial-glow ${accent.text} ${accent.hud} transition-transform duration-300 group-hover:rotate-6`}>
                     <SharedIcon name={service.iconName} className={accent.text} size={24} />
                   </div>
-
-                  <span className="text-slate-300 font-mono text-xs select-none">
-                    // [CAP-0{index + 1}]
-                  </span>
                 </div>
 
                 <h3 className={`text-2xl font-display font-semibold text-slate-900 tracking-tight mb-3 ${accent.hoverText} transition-colors duration-300`}>

@@ -1,10 +1,18 @@
-export type ServiceCategory = 
+export type ProjectCategory = 
   | "Website Development"
   | "Software Development"
   | "SaaS Applications"
-  | "AI Solutions"
-  | "Enterprise Software"
-  | "UI/UX Design";
+  | "AI Solutions";
+
+export type ServiceCategory = 
+  | "Software Development"
+  | "Web & Mobile Applications"
+  | "AI Automation Solutions"
+  | "Networking Solutions"
+  | "CCTV & Surveillance Systems"
+  | "Cloud & Server Infrastructure"
+  | "IT Consulting"
+  | "AMC & Maintenance";
 
 export interface ProjectStat {
   label: string;
@@ -16,7 +24,7 @@ export interface Project {
   title: string;
   url: string;
   description: string;
-  category: ServiceCategory;
+  category: ProjectCategory;
   tags: string[];
   year: string;
   client: string;
@@ -33,6 +41,7 @@ export interface Developer {
   role: string;
   bio: string;
   avatar: string;
+  riveFile?: string;
   skills: string[];
   socials: {
     platform: "GitHub" | "LinkedIn" | "Twitter" | "Email";

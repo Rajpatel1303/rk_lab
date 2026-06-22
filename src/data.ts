@@ -105,97 +105,123 @@ export const PROJECTS: Project[] = [
 
 export const DEVELOPERS: Developer[] = [
   {
-    name: "Systems & Infrastructure Unit",
-    role: "RK Kinetic Technical Division",
-    bio: "Our highly specialized engineering division builds robust backend architectures, scalable serverless cloud container pipelines, and customized microservice structures. We ensure your core data layers and transactions remain continuously protected, resilient and incredibly fast.",
-    avatar: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&h=400&q=80",
-    skills: ["System Architecture", "NodeJS / Express", "Next.js / React 19", "Three.js / WebGL", "Docker / Cloud Run", "PostgreSQL / Firebase", "State Management", "Performance Optimization"],
+    name: "Raj Patel",
+    role: "Software Engineer & Product Developer",
+    focus: "Software Architecture & Product Strategy",
+    bio: "Expert in software architecture, SaaS platforms, business applications, automation systems, and digital product development.",
+    avatar: "/raj.jpg",
+    skills: ["Software Architecture", "SaaS Platforms", "Business Applications", "Automation Systems", "Product Development", "Next.js / React 19", "NodeJS / Express", "PostgreSQL / Firebase"],
     socials: [
-      { platform: "GitHub", url: "https://github.com" },
-      { platform: "LinkedIn", url: "https://linkedin.com" },
-      { platform: "Twitter", url: "https://twitter.com" },
       { platform: "Email", url: "mailto:workeemail1303@gmail.com" }
     ],
-    signatureQuote: "We craft stable and clean architectural foundations. Modern enterprise backends deserve total resilience, strict type bounds, and zero execution leaks.",
-    focus: "Backend Engines & Scalable Core Deployments"
+    signatureQuote: "We design and build product architectures that align engineering discipline with business scaling targets.",
   },
   {
-    name: "Creative & Interface Unit",
-    role: "RK Kinetic Visual Division",
-    focus: "Spatial Interface Engineering & WebGL Mastery",
-    bio: "Our digital design division transforms standard layouts into engaging high-definition runtimes. We pair strict design tokens, responsive fluid layouts, and cinematic scroll transitions to capture attention and deliver organic feedback loop micro-interactions.",
-    avatar: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=400&h=400&q=80",
-    skills: ["UI/UX Master", "Tailwind CSS v4", "Framer Motion", "Interactive WebGL", "Responsive Fluidity", "Figma Prototyping", "Dynamic Color Systems", "Micro-Interactions"],
+    name: "Kashyap Patel",
+    role: "Full Stack Software Engineer",
+    focus: "Frontend Excellence & Scalable API Pipelines",
+    bio: "Specialized in frontend development, backend systems, APIs, cloud deployment, and scalable web applications.",
+    avatar: "/kashyap.jpg",
+    skills: ["Frontend Engineering", "Backend Systems", "API Integration", "Cloud Deployment", "Scalable Web Apps", "Tailwind CSS v4", "Framer Motion", "Three.js / WebGL"],
     socials: [
-      { platform: "GitHub", url: "https://github.com" },
-      { platform: "LinkedIn", url: "https://linkedin.com" },
-      { platform: "Twitter", url: "https://twitter.com" },
       { platform: "Email", url: "mailto:workeemail1303@gmail.com" }
     ],
-    signatureQuote: "Interfaces should behave like physical elements reacting dynamically to user gestures—fluid, meaningful, and striking to interact with.",
+    signatureQuote: "Interfaces should react like physical components - fluid, intuitive, and immediate under high user stress.",
+  },
+  {
+    name: "Manthan Patel",
+    role: "Network & Infrastructure Engineer",
+    focus: "Enterprise Infrastructure & Security Deployments",
+    bio: "Specialized in networking, CCTV systems, server deployment, cloud infrastructure, IT security, and enterprise technology solutions.",
+    avatar: "/manthan.jpg",
+    skills: ["Networking Solutions", "CCTV Systems", "Server Deployment", "Cloud Infrastructure", "IT Security", "Enterprise Solutions", "AWS / Google Cloud", "Structured Cabling"],
+    socials: [
+      { platform: "Email", url: "mailto:workeemail1303@gmail.com" }
+    ],
+    signatureQuote: "Hardware configurations and core network layers are the bedrock of any business interface. They must be resilient.",
   }
 ];
 
 export const SERVICES: ServiceItem[] = [
   {
-    id: "web-dev",
-    title: "Website Development",
-    description: "Highly interactive landing pages and portfolio displays built to command the highest web award standards. Blends cinematic animations, 3D viewport models, and perfect fluid spacing.",
-    iconName: "Globe",
-    size: "medium",
-    bgGradient: "from-cyan-500/10 via-blue-600/5 to-transparent",
-    features: ["Cinematic Hero Introductions", "Framer Motion Physics Engine Effects", "Speed Optimized Core Web Vitals (100 Score)"],
-    metrics: "Average Google Lighthouse score: 98+"
-  },
-  {
-    id: "saas-apps",
-    title: "SaaS Applications",
-    description: "Fully featured multi-tenant web systems, complete with complex organization managers, flexible billing systems, interactive charts, and live notifications.",
-    iconName: "Layers",
-    size: "large",
-    bgGradient: "from-blue-600/15 via-cyan-500/10 to-transparent",
-    features: ["Secure Fractional Account Portals", "Dynamic SVG Visual Analytics & Recharts Panels", "Configurable Webhooks and Alert Feeds", "Interactive Admin Roles System"],
-    metrics: "Over $42M in transacted client asset value"
-  },
-  {
     id: "software-dev",
     title: "Software Development",
-    description: "Robust industrial systems driving internal team operations, real-time telemetry pipelines, and customized interactive physical automation portals.",
+    description: "Custom software, ERP systems, SaaS platforms, business automation tools, and enterprise applications.",
     iconName: "Cpu",
     size: "medium",
-    bgGradient: "from-purple-500/10 via-pink-600/5 to-transparent",
-    features: ["Sub-Millisecond WebSockets Updates", "Tactile Native-Fidelity User Interfaces", "Multi-Threaded Node Task Queues"],
-    metrics: "99.99% Operational precision"
+    bgGradient: "from-orange-500/10 via-amber-600/5 to-transparent",
+    features: ["Custom ERP Architectures", "Business Automation Tools", "SaaS Systems Integrations", "Enterprise Core Applications"],
+    metrics: "99.99% Execution Uptime"
   },
   {
-    id: "enterprise-software",
-    title: "Enterprise Software",
-    description: "Secure, highly durable databases, rigid server architecture, role validation checks, and automatic backup modules designed for larger scale operations.",
-    iconName: "ShieldAlert",
-    size: "small",
-    bgGradient: "from-indigo-500/10 via-blue-600/5 to-transparent",
-    features: ["Strict Type-Safe Schema Declarations", "JWT Auth with Secure httpOnly Cookie Relay", "Automated Daily Redundancy Backups"],
-    metrics: "Enterprise SLA: 99.999% uptime"
-  },
-  {
-    id: "ui-ux",
-    title: "UI/UX Design",
-    description: "Creative design sprints, interactive prototype drafting, full design tokens extraction, and custom font pairings creating a striking modern brand signature.",
-    iconName: "Figma",
-    size: "small",
-    bgGradient: "from-pink-500/10 via-brand-purple/5 to-transparent",
-    features: ["Figma components auto-mirroring", "Tailwind Theme custom-token extraction", "Slippery fast tactile micro-interactions"],
-    metrics: "Over 45 completed premium layouts"
+    id: "web-mobile-apps",
+    title: "Web & Mobile Applications",
+    description: "Modern responsive websites, web applications, customer portals, and mobile apps.",
+    iconName: "Smartphone",
+    size: "large",
+    bgGradient: "from-blue-600/15 via-cyan-500/10 to-transparent",
+    features: ["Responsive Web Platforms", "iOS & Android Mobile Apps", "Interactive Client Portals", "Cinematic Visual Spacing"],
+    metrics: "Lighthouse Score: 98+"
   },
   {
     id: "ai-solutions",
-    title: "AI Solutions",
-    description: "Direct server-side integration with Large Language Models and AI tool chains to analyze unstructured data sets and generate high-fidelity files.",
+    title: "AI Automation Solutions",
+    description: "AI chatbots, workflow automation, customer support automation, and business intelligence tools.",
     iconName: "BrainCircuit",
-    size: "wide",
+    size: "medium",
+    bgGradient: "from-purple-500/10 via-pink-600/5 to-transparent",
+    features: ["Generative AI Chatbots", "Workflow Automation Pipelines", "Support Desk AI Agents", "Business Intelligence Analytics"],
+    metrics: "85% Labor Time Saved"
+  },
+  {
+    id: "networking-solutions",
+    title: "Networking Solutions",
+    description: "Office networking, structured cabling, Wi-Fi deployment, router and switch configuration, and network optimization.",
+    iconName: "Network",
+    size: "medium",
     bgGradient: "from-emerald-500/10 via-teal-600/5 to-transparent",
-    features: ["Gemini API 2.5 SDK server pipelines", "Vector embedding similarity semantic searches", "Custom real-time markdown analyzers", "Advanced LLM guardrails prompting architecture"],
-    metrics: "85% decrease in routine analytical labor"
+    features: ["Structured Data Cabling", "Enterprise Wi-Fi Deployment", "Router & Switch Hardening", "Bandwidth Optimization Audits"],
+    metrics: "Zero Packet Leakage"
+  },
+  {
+    id: "cctv-systems",
+    title: "CCTV & Surveillance Systems",
+    description: "Security camera installation, monitoring systems, remote surveillance, and enterprise security solutions.",
+    iconName: "Camera",
+    size: "small",
+    bgGradient: "from-red-500/10 via-orange-600/5 to-transparent",
+    features: ["IP Security Camera Setup", "Central Monitoring Stations", "Secure Remote Live Feeds", "Enterprise Access Control"],
+    metrics: "24/7 Real-Time Alerting"
+  },
+  {
+    id: "cloud-infrastructure",
+    title: "Cloud & Server Infrastructure",
+    description: "Cloud deployment, VPS setup, AWS, Cloudflare integration, server management, backup systems, and monitoring.",
+    iconName: "Cloud",
+    size: "large",
+    bgGradient: "from-cyan-500/10 via-indigo-600/5 to-transparent",
+    features: ["AWS & GCP Deployments", "VPS & Bare-Metal Server Setup", "Cloudflare Shield Hardening", "Automated Daily Redundancies"],
+    metrics: "99.999% SLA Guarantee"
+  },
+  {
+    id: "it-consulting",
+    title: "IT Consulting",
+    description: "Technology planning, infrastructure audits, digital transformation, and technical strategy.",
+    iconName: "Briefcase",
+    size: "small",
+    bgGradient: "from-indigo-500/10 via-blue-600/5 to-transparent",
+    features: ["IT Infrastructure Audits", "Digital Transformation Roadmaps", "Security Compliance Sprints", "Business Tech Valuations"],
+    metrics: "100% Risk Deflected"
+  },
+  {
+    id: "amc-maintenance",
+    title: "AMC & Maintenance",
+    description: "Monthly and annual maintenance contracts for software, networking, servers, and security systems.",
+    iconName: "Wrench",
+    size: "wide",
+    bgGradient: "from-amber-500/10 via-orange-600/5 to-transparent",
+    features: ["Preventative Monthly Audits", "Priority Hardware Dispatch", "Immediate SLA Troubleshooting", "Systems Integrity Logging"],
+    metrics: "2-Hour Response SLA"
   }
 ];
 
@@ -282,7 +308,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Chief Executive Officer",
     company: "OwnMyLand Corp",
     avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&h=200&q=80",
-    content: "RK Kinetic is a force multiplier. They did not just code OwnMyLand; they helped define the visual standard of real estate security. Our users consistently praise the interactive maps and fractional ledger. Our speed score is at 99%, and we tokenized $42M in our first quarter.",
+    content: "NitorTech Solutions is a force multiplier. They did not just code OwnMyLand; they helped define the visual standard of real estate security. Our users consistently praise the interactive maps and fractional ledger. Our speed score is at 99%, and we tokenized $42M in our first quarter.",
     rating: 5,
     projectRelation: "OwnMyLand Launch",
     verified: true
@@ -293,7 +319,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Product Director",
     company: "VLands Interactive",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&h=200&q=80",
-    content: "The WebGL performance RK Kinetic engineered for VLands is mind-blowing. We are getting a robust 60 FPS directly inside mobile browser frames. Their backend relays state perfectly to thousands of concurrent explorers. Highly recommend RK Kinetic for anything pushing technical boundaries.",
+    content: "The WebGL performance NitorTech Solutions engineered for VLands is mind-blowing. We are getting a robust 60 FPS directly inside mobile browser frames. Their backend relays state perfectly to thousands of concurrent explorers. Highly recommend NitorTech Solutions for anything pushing technical boundaries.",
     rating: 5,
     projectRelation: "VLands App Experience",
     verified: true
@@ -304,7 +330,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Head of Hardware Integration",
     company: "Versatile Robotics LLC",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&h=200&q=80",
-    content: "We needed an ultra low-latency telemetry control suite to let our enterprise customers pilot heavy arms remotely over the web. RK Kinetic delivered a React dashboard with 0.2ms latency sync. Outstanding engineering, absolute compliance with industrial constraints, and flawless style.",
+    content: "We needed an ultra low-latency telemetry control suite to let our enterprise customers pilot heavy arms remotely over the web. NitorTech Solutions delivered a React dashboard with 0.2ms latency sync. Outstanding engineering, absolute compliance with industrial constraints, and flawless style.",
     rating: 5,
     projectRelation: "VersatileArm Development",
     verified: true
@@ -313,27 +339,39 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const ADVANTAGES = [
   {
-    title: "Expert Teams Delivery",
-    description: "You work directly with our lead division architects. No offshore outsourcers, no untrained managers, and absolutely zero communication lag. Highly focused craft from day one.",
-    iconName: "UserCheck",
+    title: "End-to-End Technology Partner",
+    description: "One company for software, networking, cloud infrastructure, and security systems.",
+    iconName: "Globe",
     gradient: "from-cyan-500/15 over-cyan-500/5 to-transparent"
   },
   {
-    title: "100% Clean Architectural Roots",
-    description: "Zero bloated wordpress plugins or generic templates. Every single code file is written by hand in highly optimized, type-safe Next/React and clean, semantic Tailwind classes.",
-    iconName: "Scissors",
+    title: "Multi-Disciplinary Team",
+    description: "Software developers and infrastructure engineers working together.",
+    iconName: "UserCheck",
     gradient: "from-purple-500/15 over-purple-500/5 to-transparent"
   },
   {
-    title: "Spatial Glass Visual Physics",
-    description: "We are at the frontier of premium UI. Our products support high-end backdrop-filters, Apple Vision Pro spatial depth, responsive physical feedback shadows, and delicate glows.",
-    iconName: "Sparkles",
+    title: "Scalable Solutions",
+    description: "Technology built to support future growth.",
+    iconName: "Zap",
     gradient: "from-blue-600/15 over-blue-600/5 to-transparent"
   },
   {
-    title: "Server Security Hardening",
-    description: "Enterprise validation, robust JWT models, lazy API database initialization, and rigorous automated injection safety tests. Your code will resist modern threat vectors.",
+    title: "Reliable Support",
+    description: "Long-term maintenance and technical assistance.",
     iconName: "ShieldCheck",
     gradient: "from-emerald-500/15 over-emerald-500/5 to-transparent"
+  },
+  {
+    title: "Modern Technology Stack",
+    description: "Latest development frameworks and enterprise-grade infrastructure.",
+    iconName: "Cpu",
+    gradient: "from-orange-500/15 over-orange-500/5 to-transparent"
+  },
+  {
+    title: "Business-Focused Approach",
+    description: "Technology solutions aligned with business goals.",
+    iconName: "CheckCircle2",
+    gradient: "from-pink-500/15 over-pink-500/5 to-transparent"
   }
 ];

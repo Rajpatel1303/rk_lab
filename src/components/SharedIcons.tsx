@@ -41,7 +41,13 @@ import {
   PenTool,
   Paintbrush,
   Send,
-  HelpCircle
+  HelpCircle,
+  Smartphone,
+  Network,
+  Camera,
+  Cloud,
+  Briefcase,
+  Wrench
 } from "lucide-react";
 
 const ICON_MAP: Record<string, React.FC<any>> = {
@@ -89,7 +95,13 @@ const ICON_MAP: Record<string, React.FC<any>> = {
   GitMerge,
   PenTool,
   Paintbrush,
-  Send
+  Send,
+  Smartphone,
+  Network,
+  Camera,
+  Cloud,
+  Briefcase,
+  Wrench
 };
 
 interface SharedIconProps extends React.ComponentProps<"svg"> {

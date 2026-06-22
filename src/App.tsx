@@ -10,6 +10,9 @@ import TrustIndicators from "./components/TrustIndicators";
 import AIAssistant from "./components/AIAssistant";
 import SharedIcon from "./components/SharedIcons";
 import InteractiveHUD from "./components/InteractiveHUD";
+import InfrastructureExpertise from "./components/InfrastructureExpertise";
+import IndustriesWeServe from "./components/IndustriesWeServe";
+import TechShowcase3D from "./components/TechShowcase3D";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { playHoverTick, playMenuHover, playSelectTick } from "./utils/sound";
@@ -70,9 +73,11 @@ export default function App() {
       const revealItems = [
         { selector: "#about", y: 40 },
         { selector: "#services", y: 50 },
+        { selector: "#infrastructure", y: 45 },
         { selector: "#projects", y: 50 },
         { selector: "#process", y: 45 },
         { selector: "#founders", y: 40 },
+        { selector: "#industries", y: 40 },
         { selector: "#contact", y: 40 },
       ];
 
@@ -119,7 +124,7 @@ export default function App() {
     { label: "Services", id: "services" },
     { label: "Projects", id: "projects" },
     { label: "Process", id: "process" },
-    { label: "Divisions", id: "founders" },
+    { label: "Team", id: "founders" },
     { label: "Contact", id: "contact" }
   ];
 
@@ -181,14 +186,11 @@ export default function App() {
             className="flex items-center gap-2 group cursor-pointer"
           >
             <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-orange-500 via-amber-500 to-red-500 flex items-center justify-center border border-orange-500/10 shadow-inner group-hover:rotate-6 transition-transform">
-              <span className="text-white font-mono font-bold text-[10px] select-none">RK</span>
+              <span className="text-white font-mono font-bold text-[10px] select-none">NT</span>
             </div>
             <div className="text-left">
-              <span className="text-slate-800 font-display font-medium text-sm tracking-tight group-hover:text-orange-600 transition-colors">
-                RK Kinetic
-              </span>
-              <span className="text-[9px] font-mono block text-slate-500 leading-none">
-                // SYSTEM_ALPHA
+              <span className="text-slate-805 font-display font-medium text-sm tracking-tight group-hover:text-orange-600 transition-colors">
+                NitorTech Solutions
               </span>
             </div>
           </button>
@@ -321,7 +323,7 @@ export default function App() {
               {/* Mobile theme option switches */}
               <div className="pt-3 pb-1 border-t border-slate-200/50 flex flex-col gap-2">
                 <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest block text-left mb-1">
-                  // SELECTION ENGINE STYLE:
+                  SELECTION ENGINE STYLE:
                 </span>
                 <div className="grid grid-cols-3 gap-2 bg-slate-100 p-1 rounded-2xl border border-slate-200 shadow-inner">
                   <button
@@ -392,32 +394,33 @@ export default function App() {
             </div>
 
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-display font-bold text-slate-900 tracking-tight leading-[1.2] sm:leading-[1.1] md:leading-none pb-2">
-              <span className="block sm:inline">Futuristic</span>{" "}
+              <span className="block sm:inline">Complete</span>{" "}
               <span className="bg-gradient-to-r from-orange-500 via-emerald-500 to-teal-600 bg-clip-text text-transparent block sm:inline mt-1 sm:mt-0">
-                Software Agency
+                Technology Solutions
               </span>{" "}
               <span className="block sm:inline mt-2 sm:mt-0 text-slate-800 font-medium sm:font-bold">
-                For High-End Startups
+                For Modern Businesses
               </span>
             </h1>
 
             <p className="max-w-xl mx-auto lg:mx-0 text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-sans font-light">
-              We engineer custom digital monuments and high-performance web applications. Zero fluff, zero generic templates—just pixel-perfect aesthetics backed by fast, reliable, bespoke software architectures.
+              We design, develop, deploy, and maintain software, infrastructure, networking, cloud systems, and security solutions that help businesses scale confidently.
             </p>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-2 text-[11px] font-mono text-slate-500 select-none pb-2">
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Pixel-Perfect UI
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
-                Bespoke Systems
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
-                Extreme Scaling
-              </span>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-2 select-none pb-2">
+              {[
+                "Software Development",
+                "Cloud Infrastructure",
+                "Networking Solutions",
+                "CCTV Systems",
+                "IT Support",
+                "AI Automation"
+              ].map((badge) => (
+                <span key={badge} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-[10px] font-mono text-slate-600">
+                  <span className="text-emerald-500 font-bold">✓</span>
+                  {badge}
+                </span>
+              ))}
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
@@ -425,7 +428,7 @@ export default function App() {
                 onClick={() => handleNavClick("projects")}
                 className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-white bg-emerald-600 hover:bg-emerald-700 hover:shadow-[0_0_20px_rgba(16,185,129,0.35)] transition-all cursor-pointer"
               >
-                Explore Productions // [FLAG]
+                Explore Productions
               </button>
               
               <button
@@ -449,7 +452,7 @@ export default function App() {
         {/* Interactive Stats Grid Selector at the bottom of hero */}
         <div className="mt-16 md:mt-24 border-t border-slate-200/60 pt-12" id="hero-stats-row">
           <p className="text-xs font-mono text-slate-500 tracking-wider uppercase mb-6 text-center select-none">
-            Verified Architectural Benchmarks // Select units to inspect details
+            Verified Architectural Benchmarks — Select units to inspect details
           </p>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -564,12 +567,12 @@ export default function App() {
               </span>
             </h2>
 
-            <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-              We started RK Kinetic because we grew frustrated with the industry norm: agencies taking large budgets, only to outsource actual code development to junior interns. This leads to bloated code blocks, security leaks, and poor layout fluidity.
+            <p className="text-slate-700 text-sm md:text-base leading-relaxed font-semibold">
+              NitorTech Solutions delivers complete technology solutions including software development, networking, cloud infrastructure, CCTV systems, IT consulting, and ongoing support for growing businesses.
             </p>
 
             <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
-              When you partner with us, you work strictly with in-house specialists. Our Systems Division designs and manages the secure infrastructure, while our Interface Division designs and shapes the responsive interface. Together, we deliver unified, secure, high-performance platforms that support extreme traffic scales and win industry design awards.
+              We grew frustrated with the industry norm of fragmented tech services—working with different vendors for software, another for cabling, and another for security. We created NitorTech Solutions as a single, unified technology partner. By bringing developers, network engineers, security specialists, and cloud architects under one roof, we build cohesive, secure, and high-performance digital and physical environments for your business.
             </p>
 
             <div className="border-t border-slate-200 pt-6 flex gap-6">
@@ -590,9 +593,17 @@ export default function App() {
         </div>
       </section>
 
+      {/* 4.1 3D INFRASTRUCTURE SHOWCASE SECTION */}
+      <TechShowcase3D />
+
       {/* 5. SERVICES BENTO GRID SECTION */}
       <section id="services" className="py-20 md:py-24 lg:py-28 max-w-6xl mx-auto px-4 md:px-6 relative overflow-hidden border-t border-slate-200/60">
         <ServicesBento />
+      </section>
+
+      {/* 5.1 INFRASTRUCTURE EXPERTISE SECTION */}
+      <section id="infrastructure" className="py-20 md:py-24 lg:py-28 max-w-6xl mx-auto px-4 md:px-6 relative overflow-hidden border-t border-slate-200/60">
+        <InfrastructureExpertise />
       </section>
 
       {/* 6. FEATURED PROJECTS SHOWCASE SECTION */}
@@ -618,6 +629,9 @@ export default function App() {
       {/* 10. TESTIMONIALS & TRUST SECTION */}
       <section id="trust-testimonials" className="py-20 md:py-24 lg:py-28 max-w-6xl mx-auto px-4 md:px-6 relative overflow-hidden border-t border-slate-200/60">
         <TrustIndicators />
+      </section>      {/* 10.1 INDUSTRIES WE SERVE SECTION */}
+      <section id="industries" className="py-20 md:py-24 lg:py-28 max-w-6xl mx-auto px-4 md:px-6 relative overflow-hidden border-t border-slate-200/60">
+        <IndustriesWeServe />
       </section>
 
       {/* 11. QUANTUM PROPOSAL / CONTACT CTA SECTION */}
@@ -634,11 +648,11 @@ export default function App() {
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 tracking-tight mb-4">
-            Begin the <span className="bg-gradient-to-r from-orange-500 via-amber-500 to-red-500 bg-clip-text text-transparent">Deployment</span>
+            Let's Build Your <span className="bg-gradient-to-r from-orange-500 via-amber-500 to-red-500 bg-clip-text text-transparent">Technology Ecosystem</span>
           </h2>
           
           <p className="max-w-xl mx-auto text-slate-500 text-sm md:text-base">
-            Get an instant structural breakdown. Fill in your project credentials and system guidelines in the interactive terminal below to calculate immediate development estimations.
+            Whether you need software development, networking infrastructure, CCTV deployment, cloud systems, or complete IT solutions, our team is ready to help.
           </p>
         </div>
 
@@ -650,11 +664,11 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
             <div className="w-6 h-6 rounded-lg bg-slate-100 flex items-center justify-center border border-slate-200 text-slate-800 font-mono text-[8.5px]">
-              RK
+              NT
             </div>
             <div>
-              <span className="text-slate-900 font-display font-medium text-sm block">RK Kinetic</span>
-              <span className="text-[10px] text-slate-400 leading-none">© 2026 RK Kinetic. All Rights Reserved.</span>
+              <span className="text-slate-900 font-display font-medium text-sm block">NitorTech Solutions</span>
+              <span className="text-[10px] text-slate-400 leading-none">© 2026 NitorTech Solutions. All Rights Reserved.</span>
             </div>
           </div>
 

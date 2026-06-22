@@ -16,6 +16,7 @@ export default function AIAssistant() {
   // Form states
   const [clientName, setClientName] = useState("");
   const [scope, setScope] = useState("");
+  const [selectedService, setSelectedService] = useState("Software Development");
   const [budgetIdx, setBudgetIdx] = useState(1); // Default to Mid Tier
   const [timelineIdx, setTimelineIdx] = useState(1); // Default to Standard
 
@@ -25,9 +26,20 @@ export default function AIAssistant() {
   const [submittedMessage, setSubmittedMessage] = useState(false);
   const [submitType, setSubmitType] = useState<"lock" | "whatsapp" | null>(null);
 
+  const servicesList = [
+    "Software Development",
+    "Web Application",
+    "Mobile Application",
+    "Networking",
+    "CCTV Installation",
+    "Cloud Infrastructure",
+    "IT Consulting",
+    "Maintenance Contract"
+  ];
+
   const budgets = [
-    { label: "SaaS Starter ($10k - $20k)", code: "STARTER" },
-    { label: "Growth scale ($20k - $50k)", code: "GROWTH" },
+    { label: "Starter/Small Scale ($10k - $20k)", code: "STARTER" },
+    { label: "Growth / Medium Scale ($20k - $50k)", code: "GROWTH" },
     { label: "Enterprise Custom ($50k+)", code: "ENTERPRISE" }
   ];
 
@@ -41,7 +53,7 @@ export default function AIAssistant() {
     "Compiling Concept Semantics...",
     "Injecting Custom Security Parameters...",
     "Estimating System State Hours...",
-    "Formulating Interface Layout Blueprint...",
+    "Formulating Infrastructure Blueprint...",
     "Synthesizing Strategic Milestones..."
   ];
 
@@ -68,50 +80,84 @@ export default function AIAssistant() {
   };
 
   const generateProposalResult = () => {
-    const scopeLower = scope.toLowerCase();
     let calculatedHours = 80;
-    let stack = ["React 19 (TypeScript)", "Tailwind CSS v4", "Docker Containers"];
+    let stack: string[] = [];
     let rajPerspective = "";
     let kashayPerspective = "";
-    let phases = [
-      "Conceptual Blueprint Workshops",
-      "Dynamic Figma Design Phase",
-      "Lead Interface Development & API bindings",
-      "Rigorous Redundancy Audits"
-    ];
+    let phases: string[] = [];
 
-    // Simple context analysis to make the output highly customized and real
-    if (scopeLower.includes("saas") || scopeLower.includes("portal") || scopeLower.includes("platform")) {
-      calculatedHours = budgetIdx === 0 ? 120 : budgetIdx === 1 ? 240 : 450;
-      stack.push("Express JWT Security", "PostgreSQL", "Redis Cache", "Recharts Analytics");
-      rajPerspective = "Excellent SaaS architecture candidate. I suggest launching on GCP Cloud Run using headless container sets with isolated postgreSQL channels to scale query streams effortlessly.";
-      kashayPerspective = "We will build a responsive sidebar-focused administrative dashboard utilizing tactile glass panels, slideout drawers, and detailed charts with smooth transitions.";
-      phases.push("Fractional organization and JWT auth configurations", "Multi-tenant role restrictions audit");
-    } else if (scopeLower.includes("ai") || scopeLower.includes("model") || scopeLower.includes("llm") || scopeLower.includes("assistant")) {
-      calculatedHours = budgetIdx === 0 ? 140 : budgetIdx === 1 ? 280 : 500;
-      stack.push("Gemini API (Google GenAI)", "Pinecone / Vector Database", "NodeJS Task Pipelines");
-      rajPerspective = "A high-fidelity AI solution. I will implement a rigid backend proxy queue utilizing server-side Gemini SDK streams and secure api key guardrails preventing direct memory leakages.";
-      kashayPerspective = "The chat interfaces and markdown streams will be fitted with responsive typing indicators and fluid motion fades mimicking high-end terminal visual speeds.";
-      phases.push("Vector storage semantic embeddings matrix design", "LLM Response formatting & guardrails hardening");
-    } else if (scopeLower.includes("3d") || scopeLower.includes("game") || scopeLower.includes("vland") || scopeLower.includes("metaverse")) {
-      calculatedHours = budgetIdx === 0 ? 160 : budgetIdx === 1 ? 300 : 600;
-      stack.push("Three.js (WebGL)", "React Three Fiber", "Websockets Connection");
-      rajPerspective = "Graphics-heavy processing setup. We require a sub-millisecond bidirectional websocket relay server to synchronize avatar positions safely with minimal bandwidth overload.";
-      kashayPerspective = "An immersive canvas viewport with fully customizable camera constraints and mobile fluid touch mechanics. 60 FPS in-browser execution will be targeted.";
-      phases.push("WebGL vertex loading optimization", "Websocket delta state compression checks");
-    } else {
-      // General website or standard software development
-      calculatedHours = budgetIdx === 0 ? 80 : budgetIdx === 1 ? 160 : 320;
-      stack.push("Vite Static Server", "Framer Motion Physics Engine", "Lucide Vector Icons");
-      rajPerspective = "I will architect a lightweight server layout leveraging express routing and Cloud Run triggers to grant the highest reliability scores.";
-      kashayPerspective = "This layout demands an incredible scroll-based visual storytelling style, spacious negative margins, and floating high-contrast display components.";
-      phases.push("Animated interaction choreography set up", "Core Lighthouse speed optimization");
+    // Calibrated response generation depending on the selected primary service
+    switch (selectedService) {
+      case "Software Development":
+        calculatedHours = budgetIdx === 0 ? 100 : budgetIdx === 1 ? 220 : 400;
+        stack = ["React 19 / TypeScript", "Express.js", "Docker Containers", "PostgreSQL", "NodeJS Task Queue"];
+        rajPerspective = "Excellent software development candidate. I will architect a highly scalable modular backend structure with strict type-safety boundaries, redundant postgres pools, and containerized deployments.";
+        kashayPerspective = "We will build highly responsive frontends and secure API routers with comprehensive token verification and state management patterns.";
+        phases = ["Type-Safe Database Schema Mapping", "API Core Router Integrations", "Multi-Threaded Queue Tests", "Rigorous Performance Auditing"];
+        break;
+
+      case "Web Application":
+        calculatedHours = budgetIdx === 0 ? 85 : budgetIdx === 1 ? 160 : 320;
+        stack = ["Next.js 15 (App Router)", "React 19", "Tailwind CSS v4", "Framer Motion", "Cloud Run"];
+        rajPerspective = "A perfect fit for Next.js serverless cloud architectures. I suggest deploying headless containers via GCP Cloud Run to handle traffic spikes seamlessly.";
+        kashayPerspective = "I will construct smooth micro-interactions, liquid glass panels, and visual parallax components utilizing Framer Motion for a stunning look.";
+        phases = ["Responsive Layout Prototyping", "Next.js App Routing Configuration", "Speed Performance Optimization", "Cross-Device Fluidity Checks"];
+        break;
+
+      case "Mobile Application":
+        calculatedHours = budgetIdx === 0 ? 120 : budgetIdx === 1 ? 240 : 480;
+        stack = ["React Native / Expo", "Tailwind CSS", "NodeJS API Server", "Firebase Notifications", "App Store Bundlers"];
+        rajPerspective = "I will deploy a high-availability Express server coupled with Cloudflare CDN protection and push notifications state synchronization.";
+        kashayPerspective = "Expo runtime with smooth native screen transition mechanics, offline storage caching, and responsive gesture-based navigation panels.";
+        phases = ["App Store Build Provisioning", "Offline SQLite Storage Layout", "Expo Native Module Testing", "Cross-Platform UI Validation"];
+        break;
+
+      case "Networking":
+        calculatedHours = budgetIdx === 0 ? 60 : budgetIdx === 1 ? 120 : 200;
+        stack = ["Ubiquiti UniFi OS", "Cat6A Structured Cabling", "VLAN Segmentation", "VPN Portals", "SNMP Monitoring"];
+        rajPerspective = "I will configure local server firewalls, DNS shielding, and remote VPN credentials for secure access control.";
+        kashayPerspective = "We will design a highly secure, segmented VLAN structure separating office workstations, guest Wi-Fi, and security equipment.";
+        phases = ["Network Architecture Mapping", "Structured Hardware Cabling Setup", "VLAN Traffic Profiling Checks", "Bandwidth Optimization Audits"];
+        break;
+
+      case "CCTV Installation":
+        calculatedHours = budgetIdx === 0 ? 50 : budgetIdx === 1 ? 90 : 160;
+        stack = ["Hikvision / Dahua IP Cams", "Network Video Recorders (NVR)", "RAID Storage Pools", "PoE Switch Networking", "Secure VPN Viewer"];
+        rajPerspective = "We will install PoE IP cameras, position storage nodes with high-durability surveillance disks (RAID-10), and configure central NVR feeds.";
+        kashayPerspective = "We can set up a secure client console with a live preview viewport, access log summaries, and instant email alert hooks.";
+        phases = ["Camera Placement Mapping", "Cabling & PoE Switch Installation", "Central NVR Storage Allocation", "Remote Live Feed Encryption Checks"];
+        break;
+
+      case "Cloud Infrastructure":
+        calculatedHours = budgetIdx === 0 ? 90 : budgetIdx === 1 ? 180 : 360;
+        stack = ["AWS CloudFormation", "Google Cloud Platform", "Docker & Kubernetes", "Terraform IaC", "Cloudflare CDN Shield"];
+        rajPerspective = "I will build a declarative infrastructure blueprint using Terraform, configuring load balancers, container registries, and auto-scaling rules.";
+        kashayPerspective = "I will set up secure private subnets, bastion host gateways, Cloudflare CDN shields, and configure daily automated redundancy backup rules.";
+        phases = ["Terraform IaC Blueprints", "Kubernetes Cluster Configurations", "Cloudflare DNS & WAF Hardening", "Failover Recovery Verification"];
+        break;
+
+      case "IT Consulting":
+        calculatedHours = budgetIdx === 0 ? 40 : budgetIdx === 1 ? 80 : 150;
+        stack = ["Technology Roadmap Planning", "Infrastructure Audits", "Security Audits", "Risk Matrices", "Compliance Checklists"];
+        rajPerspective = "I will perform a comprehensive vulnerability assessment of your software stacks, database schemas, and API authentication logic.";
+        kashayPerspective = "I will audit your physical server cabinets, office network topology, switch configurations, and CCTV coverage maps to find vulnerabilities.";
+        phases = ["IT Architecture Audits", "Security Posture Assessments", "Digital Roadmap Strategy Presentation", "Vulnerability Remediations Plan"];
+        break;
+
+      case "Maintenance Contract":
+      default:
+        calculatedHours = budgetIdx === 0 ? 30 : budgetIdx === 1 ? 70 : 140;
+        stack = ["Annual Maintenance (AMC)", "24/7 Monitoring Agents", "SLA Support Contracts", "Preventative Audits", "Ticketing System"];
+        rajPerspective = "We will schedule monthly onsite assessments to inspect cabling, clean server racks, update firmware, and test network packet limits.";
+        kashayPerspective = "I will deploy light monitoring daemons to check database health, API logs, container resource spikes, and automatically page our staff on errors.";
+        phases = ["Initial Infrastructure Cataloging", "Monitoring Agent Configurations", "Monthly Preventive Audit Scheduler Setup", "SLA Response Drills"];
+        break;
     }
 
     const calculatedCycles = Math.ceil(calculatedHours / 35);
 
     setResult({
-      conceptSummary: `A customized ${budgets[budgetIdx].label.split(" (")[0]} development target engineered to execute "${scope}" within a ${timelines[timelineIdx].label.toLowerCase()} sprint pipeline.`,
+      conceptSummary: `A customized ${budgets[budgetIdx].label.split(" (")[0]} target engineered to execute "${scope}" via ${selectedService} within a ${timelines[timelineIdx].label.toLowerCase()} sprint pipeline.`,
       recommendedStack: stack,
       estimatedHours: calculatedHours,
       timelineCycles: calculatedCycles,
@@ -149,11 +195,11 @@ export default function AIAssistant() {
             </div>
 
             <h3 className="text-2xl md:text-3xl font-display font-medium text-slate-900 mb-2 leading-tight">
-              Initiate Your <span className="bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent">Deployment</span>
+              Select Your <span className="bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent">Services</span>
             </h3>
             
             <p className="text-slate-500 text-xs md:text-sm mb-6">
-              Write your scope below to let our local strategic engine outline an initial estimate, structural tech stack, and milestone blueprint.
+              Write your scope below to let our strategic engine outline an initial estimate, structural tech stack, and milestone blueprint.
             </p>
 
             <form onSubmit={triggerAIComputation} className="space-y-4">
@@ -170,6 +216,28 @@ export default function AIAssistant() {
                   className="w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-orange-500 transition-colors"
                   id="client-name-input"
                 />
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-2 pl-1">
+                  Select Primary Service Required
+                </label>
+                <div className="grid grid-cols-2 gap-1.5">
+                  {servicesList.map((srv) => (
+                    <button
+                      key={srv}
+                      type="button"
+                      onClick={() => setSelectedService(srv)}
+                      className={`py-2 px-2.5 rounded-xl text-left border text-[9px] font-mono transition-all leading-tight ${
+                        selectedService === srv
+                          ? "bg-orange-500/10 border-orange-500 text-orange-700 font-semibold"
+                          : "bg-transparent border-slate-200 text-slate-500 hover:border-slate-350 hover:text-slate-800"
+                      }`}
+                    >
+                      {srv}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <div>
@@ -340,7 +408,7 @@ export default function AIAssistant() {
                   <div className="text-right">
                     <span className="text-[10px] font-mono text-slate-500 block">EST. SCHEDULE</span>
                     <span className="text-sm font-mono text-emerald-600 bg-emerald-50 px-3 py-1 rounded-md border border-emerald-500/20">
-                      {result.timelineCycles} Cycles // {result.estimatedHours} Hrs
+                      {result.timelineCycles} Cycles — {result.estimatedHours} Hrs
                     </span>
                   </div>
                 </div>
@@ -438,9 +506,10 @@ export default function AIAssistant() {
                     onClick={() => {
                       if (result) {
                         const whatsappNumber = "16808883230";
-                        const whatsappText = `*Patel Software Agency - Strategy Proposal Scope Submission*
+                        const whatsappText = `*NitorTech Solutions - Strategy Proposal Scope Submission*
 ----------------------------------
 *Client/Organization:* ${clientName}
+*Primary Service:* ${selectedService}
 *Budget Tier:* ${budgets[budgetIdx].label}
 *Target Timeline:* ${timelines[timelineIdx].label}
 
@@ -480,7 +549,7 @@ ${result.keyPhases.map(phase => `- ${phase}`).join("\n")}`;
                     }}
                     className="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-xs text-white uppercase font-mono font-semibold transition-all cursor-pointer select-none"
                   >
-                    Submit Scope To Dev Team // WHATSAPP
+                    Submit Scope via WhatsApp
                   </button>
                 </div>
               </motion.div>
