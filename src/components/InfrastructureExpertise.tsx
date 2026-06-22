@@ -89,7 +89,7 @@ export default function InfrastructureExpertise() {
           </h2>
 
           <p className="text-slate-600 text-sm md:text-base leading-relaxed font-light">
-            Unlike traditional software agencies, NitorTech Solutions combines software engineering, networking expertise, infrastructure management, and security solutions to deliver complete business technology ecosystems.
+            Unlike traditional software agencies, Obsidian Technologies combines software engineering, networking expertise, infrastructure management, and security solutions to deliver complete business technology ecosystems.
           </p>
 
           <div className="border-t border-slate-200/80 pt-6 space-y-4">

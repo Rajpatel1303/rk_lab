@@ -506,7 +506,7 @@ export default function AIAssistant() {
                     onClick={() => {
                       if (result) {
                         const whatsappNumber = "16808883230";
-                        const whatsappText = `*NitorTech Solutions - Strategy Proposal Scope Submission*
+                        const whatsappText = `*Obsidian Technologies - Strategy Proposal Scope Submission*
 ----------------------------------
 *Client/Organization:* ${clientName}
 *Primary Service:* ${selectedService}

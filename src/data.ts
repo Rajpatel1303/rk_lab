@@ -308,7 +308,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Chief Executive Officer",
     company: "OwnMyLand Corp",
     avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&h=200&q=80",
-    content: "NitorTech Solutions is a force multiplier. They did not just code OwnMyLand; they helped define the visual standard of real estate security. Our users consistently praise the interactive maps and fractional ledger. Our speed score is at 99%, and we tokenized $42M in our first quarter.",
+    content: "Obsidian Technologies is a force multiplier. They did not just code OwnMyLand; they helped define the visual standard of real estate security. Our users consistently praise the interactive maps and fractional ledger. Our speed score is at 99%, and we tokenized $42M in our first quarter.",
     rating: 5,
     projectRelation: "OwnMyLand Launch",
     verified: true
@@ -319,7 +319,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Product Director",
     company: "VLands Interactive",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&h=200&q=80",
-    content: "The WebGL performance NitorTech Solutions engineered for VLands is mind-blowing. We are getting a robust 60 FPS directly inside mobile browser frames. Their backend relays state perfectly to thousands of concurrent explorers. Highly recommend NitorTech Solutions for anything pushing technical boundaries.",
+    content: "The WebGL performance Obsidian Technologies engineered for VLands is mind-blowing. We are getting a robust 60 FPS directly inside mobile browser frames. Their backend relays state perfectly to thousands of concurrent explorers. Highly recommend Obsidian Technologies for anything pushing technical boundaries.",
     rating: 5,
     projectRelation: "VLands App Experience",
     verified: true
@@ -330,7 +330,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Head of Hardware Integration",
     company: "Versatile Robotics LLC",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&h=200&q=80",
-    content: "We needed an ultra low-latency telemetry control suite to let our enterprise customers pilot heavy arms remotely over the web. NitorTech Solutions delivered a React dashboard with 0.2ms latency sync. Outstanding engineering, absolute compliance with industrial constraints, and flawless style.",
+    content: "We needed an ultra low-latency telemetry control suite to let our enterprise customers pilot heavy arms remotely over the web. Obsidian Technologies delivered a React dashboard with 0.2ms latency sync. Outstanding engineering, absolute compliance with industrial constraints, and flawless style.",
     rating: 5,
     projectRelation: "VersatileArm Development",
     verified: true

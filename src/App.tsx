@@ -186,11 +186,11 @@ export default function App() {
             className="flex items-center gap-2 group cursor-pointer"
           >
             <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-orange-500 via-amber-500 to-red-500 flex items-center justify-center border border-orange-500/10 shadow-inner group-hover:rotate-6 transition-transform">
-              <span className="text-white font-mono font-bold text-[10px] select-none">NT</span>
+              <span className="text-white font-mono font-bold text-[10px] select-none">OT</span>
             </div>
             <div className="text-left">
               <span className="text-slate-805 font-display font-medium text-sm tracking-tight group-hover:text-orange-600 transition-colors">
-                NitorTech Solutions
+                Obsidian Technologies
               </span>
             </div>
           </button>
@@ -568,11 +568,11 @@ export default function App() {
             </h2>
 
             <p className="text-slate-700 text-sm md:text-base leading-relaxed font-semibold">
-              NitorTech Solutions delivers complete technology solutions including software development, networking, cloud infrastructure, CCTV systems, IT consulting, and ongoing support for growing businesses.
+              Obsidian Technologies delivers complete technology solutions including software development, networking, cloud infrastructure, CCTV systems, IT consulting, and ongoing support for growing businesses.
             </p>
 
             <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
-              We grew frustrated with the industry norm of fragmented tech services—working with different vendors for software, another for cabling, and another for security. We created NitorTech Solutions as a single, unified technology partner. By bringing developers, network engineers, security specialists, and cloud architects under one roof, we build cohesive, secure, and high-performance digital and physical environments for your business.
+              We grew frustrated with the industry norm of fragmented tech services—working with different vendors for software, another for cabling, and another for security. We created Obsidian Technologies as a single, unified technology partner. By bringing developers, network engineers, security specialists, and cloud architects under one roof, we build cohesive, secure, and high-performance digital and physical environments for your business.
             </p>
 
             <div className="border-t border-slate-200 pt-6 flex gap-6">
@@ -664,11 +664,11 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
             <div className="w-6 h-6 rounded-lg bg-slate-100 flex items-center justify-center border border-slate-200 text-slate-800 font-mono text-[8.5px]">
-              NT
+              OT
             </div>
             <div>
-              <span className="text-slate-900 font-display font-medium text-sm block">NitorTech Solutions</span>
-              <span className="text-[10px] text-slate-400 leading-none">© 2026 NitorTech Solutions. All Rights Reserved.</span>
+              <span className="text-slate-900 font-display font-medium text-sm block">Obsidian Technologies</span>
+              <span className="text-[10px] text-slate-400 leading-none">© 2026 Obsidian Technologies. All Rights Reserved.</span>
             </div>
           </div>
 
