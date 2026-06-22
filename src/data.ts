@@ -109,7 +109,7 @@ export const DEVELOPERS: Developer[] = [
     role: "Software Engineer & Product Developer",
     focus: "Software Architecture & Product Strategy",
     bio: "Expert in software architecture, SaaS platforms, business applications, automation systems, and digital product development.",
-    avatar: "/raj.jpg",
+    avatar: "raj.jpg",
     skills: ["Software Architecture", "SaaS Platforms", "Business Applications", "Automation Systems", "Product Development", "Next.js / React 19", "NodeJS / Express", "PostgreSQL / Firebase"],
     socials: [
       { platform: "Email", url: "mailto:workeemail1303@gmail.com" }
@@ -121,7 +121,7 @@ export const DEVELOPERS: Developer[] = [
     role: "Full Stack Software Engineer",
     focus: "Frontend Excellence & Scalable API Pipelines",
     bio: "Specialized in frontend development, backend systems, APIs, cloud deployment, and scalable web applications.",
-    avatar: "/kashyap.jpg",
+    avatar: "kashyap.jpg",
     skills: ["Frontend Engineering", "Backend Systems", "API Integration", "Cloud Deployment", "Scalable Web Apps", "Tailwind CSS v4", "Framer Motion", "Three.js / WebGL"],
     socials: [
       { platform: "Email", url: "mailto:workeemail1303@gmail.com" }
@@ -133,7 +133,7 @@ export const DEVELOPERS: Developer[] = [
     role: "Network & Infrastructure Engineer",
     focus: "Enterprise Infrastructure & Security Deployments",
     bio: "Specialized in networking, CCTV systems, server deployment, cloud infrastructure, IT security, and enterprise technology solutions.",
-    avatar: "/manthan.jpg",
+    avatar: "manthan.jpg",
     skills: ["Networking Solutions", "CCTV Systems", "Server Deployment", "Cloud Infrastructure", "IT Security", "Enterprise Solutions", "AWS / Google Cloud", "Structured Cabling"],
     socials: [
       { platform: "Email", url: "mailto:workeemail1303@gmail.com" }

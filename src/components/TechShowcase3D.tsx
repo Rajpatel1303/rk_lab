@@ -40,7 +40,7 @@ export default function TechShowcase3D() {
       sub: "Bespoke Logic Stacks",
       badge: "SOFTWARE",
       icon: "💻",
-      riveFile: "/rive/software.riv",
+      riveFile: "rive/software.riv",
       stat: "150+",
       statLabel: "Projects Delivered",
       description:
@@ -57,7 +57,7 @@ export default function TechShowcase3D() {
       sub: "Elastic Infrastructure",
       badge: "CLOUD",
       icon: "☁️",
-      riveFile: "/rive/cloud.riv",
+      riveFile: "rive/cloud.riv",
       stat: "99.9%",
       statLabel: "Uptime Guaranteed",
       description:
@@ -74,7 +74,7 @@ export default function TechShowcase3D() {
       sub: "Enterprise Connectivity",
       badge: "NETWORK",
       icon: "🌐",
-      riveFile: "/rive/networking.riv",
+      riveFile: "rive/networking.riv",
       stat: "10Gbps",
       statLabel: "Max Throughput",
       description:
@@ -91,7 +91,7 @@ export default function TechShowcase3D() {
       sub: "Physical Security",
       badge: "SECURITY",
       icon: "📹",
-      riveFile: "/rive/cctv.riv",
+      riveFile: "rive/cctv.riv",
       stat: "24/7",
       statLabel: "Monitoring Active",
       description:
@@ -108,7 +108,7 @@ export default function TechShowcase3D() {
       sub: "End-to-End IT",
       badge: "ECOSYSTEM",
       icon: "🔗",
-      riveFile: "/rive/unified.riv",
+      riveFile: "rive/unified.riv",
       stat: "2hr",
       statLabel: "Response SLA",
       description:
